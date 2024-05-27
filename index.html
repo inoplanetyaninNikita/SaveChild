@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Викторина</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f0f0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+.quiz-container {
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.quiz-question {
+margin-bottom: 20px;
+}
+label {
+display: block;
+margin-bottom: 8px;
+}
+.answers {
+margin-bottom: 10px;
+}
+.answers label {
+display: flex;
+align-items: center;
+margin-bottom: 5px;
+}
+.answers input {
+margin-right: 10px;
+}
+button {
+display: block;
+width: 100%;
+padding: 10px;
+background-color: #28a745;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+}
+button:hover {
+background-color: #218838;
+}
+</style>
+</head>
+<body>
+<div class="quiz-container">
+<div class="quiz-question">
+<label>Определите чье письмо дошло до адресата, а в чьем письме вирус:</label>
+<div class="answers">
+<label><input type="checkbox" name="question1" value="incorrect">Лисе</label>
+<label><input type="checkbox" name="question1" value="correct"> Заяцу</label>
+<label><input type="checkbox" name="question1" value="incorrect"> Медведю</label>
+</div>
+</div>
+<div class="quiz-question">
+<label>Чтоб компьютер не болел надо...</label>
+<div class="answers">
+<label><input type="checkbox" name="question2" value="correct">Использовать антивирусную программу</label>
+<label><input type="checkbox" name="question2" value="correct">Проверять все съемные носители информации</label>
+<label><input type="checkbox" name="question2" value="incorrect">Не пользоваться электронной почтой</label>
+<label><input type="checkbox" name="question2" value="correct">Время от времени менять пароли</label>
+<label><input type="checkbox" name="question2" value="incorrect">Не включать свой компьютер</label>
+</div>
+</div>
+<button onclick="checkAnswers()">Проверить ответы</button>
+</div>
+
+<script>
+function checkAnswers() {
+const question1 = document.querySelectorAll('input[name="question1"]:checked');
+const question2 = document.querySelectorAll('input[name="question2"]:checked');
+
+const isQuestion1Correct = question1.length === 1 && question1[0].value === 'correct';
+const isQuestion2Correct = question2.length === 3 && 
+question2[0].value === 'correct' && 
+question2[1].value === 'correct' && 
+question2[2].value === 'correct';
+
+if (isQuestion1Correct && isQuestion2Correct) {
+window.location.href = "http://stackoverflow.com";
+} else {
+alert('Попробуй ещё раз');
+}
+}
+</script>
+</body>
+</html>
