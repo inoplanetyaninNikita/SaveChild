@@ -56,16 +56,16 @@ background-color: #218838;
 </head>
 <body>
 <div class="quiz-container">
-<div class="quiz-question">
+<!-- <div class="quiz-question">
 <label>Определите чье письмо дошло до адресата, а в чьем письме вирус:</label>
 <div class="answers">
 <label><input type="checkbox" name="question1" value="incorrect">Лисе</label>
 <label><input type="checkbox" name="question1" value="correct"> Заяцу</label>
 <label><input type="checkbox" name="question1" value="incorrect"> Медведю</label>
 </div>
-</div>
+</div> -->
 <div class="quiz-question">
-<label>Чтоб компьютер не болел надо...</label>
+<label>Чтоб компьютер не болел, надо...</label>
 <div class="answers">
 <label><input type="checkbox" name="question2" value="correct">Использовать антивирусную программу</label>
 <label><input type="checkbox" name="question2" value="correct">Проверять все съемные носители информации</label>
@@ -82,14 +82,15 @@ function checkAnswers() {
 const question1 = document.querySelectorAll('input[name="question1"]:checked');
 const question2 = document.querySelectorAll('input[name="question2"]:checked');
 
-const isQuestion1Correct = question1.length === 1 && question1[0].value === 'correct';
+// const isQuestion1Correct = question1.length === 1 && question1[0].value === 'correct';
+isQuestion1Correct = true;
 const isQuestion2Correct = question2.length === 3 && 
 question2[0].value === 'correct' && 
 question2[1].value === 'correct' && 
 question2[2].value === 'correct';
 
 if (isQuestion1Correct && isQuestion2Correct) {
-window.location.href = "http://stackoverflow.com";
+window.location.href = "https://logiclike.com/2.0/cabinet/dashboard/logic";
 } else {
 alert('Попробуй ещё раз');
 }
